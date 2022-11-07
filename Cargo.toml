@@ -1,0 +1,31 @@
+[package]
+name = "scratchstack-wrapper-aws-c-cal"
+description = "Scratchstack Rust wrapper around the aws-c-cal library"
+authors = ["David Cuthbert <dacut@kanga.org>"]
+edition = "2021"
+homepage = "https://github.com/dacut/scratchstack-wrapper-aws-c-cal"
+license = "Apache-2.0"
+repository = "https://github.com/dacut/scratchstack-wrapper-aws-c-cal"
+version = "0.1.0-alpha.5"
+build = "build.rs"
+include = [
+    "/include/aws/cal/*.h",
+    "/include/aws/cal/*.inl",
+    "/src",
+    "Cargo.toml",
+    "build.rs",
+]
+links = "aws-c-cal"
+
+[lib]
+name = "scratchstack_wrapper_aws_c_cal"
+crate-type = ["lib"]
+doctest = false
+
+[build-dependencies]
+bindgen = "^0.61"
+
+[dependencies]
+scratchstack-wrapper-aws-lc = "=0.1.0-alpha.5"
+scratchstack-wrapper-aws-c-common = "=0.1.0-alpha.5"
+libc = "^0.2"
